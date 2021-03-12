@@ -1,11 +1,12 @@
 Resources:
 
-  BeliscoRedshift:
+  ViniRedshift:
     Type: AWS::Redshift::Cluster
     Properties:
       AllowVersionUpgrade: true
       AutomatedSnapshotRetentionPeriod: 5
-      AvailabilityZone: us-east-1a
+
+
       ClusterIdentifier: my-redshift-cluster
       ClusterParameterGroupName: !Ref RedshiftParameterGroup
       ClusterSubnetGroupName: !Ref RedshiftSubnetGroup

@@ -17,6 +17,7 @@ Resources:
         - !Ref IamPolicyDataEngineer
       RoleName: role-data-engineer
 
+  # Cria Grupo de Engineer, que consegue: Listar o bucket ,Baixar,Deletar e Inputar dados
   IamPolicyDataEngineer:
     Type: AWS::IAM::ManagedPolicy
     Properties:
@@ -32,7 +33,7 @@ Resources:
               - s3:Put*
             Resource:
               - arn:aws:s3:::*
-
+  # Define Grupo de Data Scientist:
   IamRoleDataScientist:
     Type: AWS::IAM::Role
     Properties:
@@ -49,6 +50,8 @@ Resources:
         - !Ref IamPolicyDataScientist
       RoleName: role-data-scientist
 
+
+  # DataScientis conseguem Listar e baixar os dados
   IamPolicyDataScientist:
     Type: AWS::IAM::ManagedPolicy
     Properties:
